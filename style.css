@@ -21,8 +21,15 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#close-btn{
+    background-color: transparent;
+    width:20px;
+    height:20px;
+    padding:0px;
+}
+
 .cover{
-    display:flex;
+    display:none;
     width:100%;
     height:100%;
     position:fixed;
@@ -31,8 +38,22 @@ body {
 }
 
 .sidebar{
+    width:60%;
+    height:100%;
+    background-color:white;
+    animation: slide 0.2s linear forwards;
+}
+
+.sidebar-items{
+    width:100%;
+    height:90%;
     padding:16px;
-    
+    padding-right:10px;
+    overflow-y:scroll;
+}
+
+.sidebar-items::-webkit-scrollbar{
+    width:0px;
 }
 
 .container{
@@ -310,6 +331,7 @@ section{
 .icon{
     width:20px;
     height:20px;
+    display: flex;
     border-radius:50%;
     background-color:#7C7D88;
 }
@@ -406,7 +428,46 @@ section{
     color:#7c7c7c;
     font-size: 14px;
 }
-
+a{
+    text-decoration: none;
+}
+.menu-title{
+        width:100%;
+        height:max-content;
+        justify-content:space-between;
+        display:flex;
+        align-items: center;
+        color:#212529;
+        font-size: 20px;
+        padding:16px;
+        font-weight:500;
+}
+.topper, .options{
+    margin-bottom:16px;
+}
+.options{
+    font-size:16px;
+    display:flex;
+    flex-direction: column;
+}
+.option{
+    padding:8px 16px;
+    padding-right:12px;
+    height:40px;
+    display: flex;
+    align-items:center;
+    width:100%;
+    gap:16px;
+    color: #333333;
+}
+/* .option i, option img{
+    margin-right:8px;
+} */
+.topper{
+    color:#212529BF;
+    font-size:14px;
+    font-weight: 500;
+}
 .story{
     color: #212529;
     font-size: 14px;
@@ -603,5 +664,23 @@ section{
 @media only screen and (min-width:1300px){
     *::-webkit-scrollbar{
         width:0px;
+    }
+}
+
+@keyframes slide{
+    0%{
+        transform:translate(-100%);
+    }
+    100%{
+        transform:translate(0%);
+    }
+}
+
+@keyframes slide-away{
+    0%{
+        transform:translate(0%);
+    }
+    100%{
+        transform:translate(-100%);
     }
 }
